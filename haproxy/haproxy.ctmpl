@@ -2,7 +2,7 @@ global
     log 127.0.0.1   local0
     log 127.0.0.1   local1 notice
     debug
-    maxconn {{with $maxconn:=key "service/haproxy/maxconn"}}{{$maxconn}}{{else}}4096{{end}}
+    maxconn {{keyOrDefault "service/haproxy/maxconn" "4096"}}
 
 defaults
     log global

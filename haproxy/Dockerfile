@@ -12,4 +12,4 @@ RUN ( wget --no-check-certificate https://releases.hashicorp.com/consul-template
 COPY haproxy.json /tmp/haproxy.json
 COPY haproxy.ctmpl /tmp/haproxy.ctmpl
 
-CMD ["consul-template", "-config=/tmp/haproxy.json"]
+CMD ["consul-template", "-config=/tmp/haproxy.json", "-log-level=debug"]
